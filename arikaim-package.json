@@ -1,0 +1,20 @@
+{
+    "title": "Services",
+    "name": "services",
+    "package-type": "extension",
+    "type": "system",
+    "description": "Services package manager.",
+    "short-description": "Services package manager.",
+    "version": "1.0.0",
+    "repository": "https://github.com/arikaim/services-package-manager.git",
+    "position": "2",
+    "requires": {      
+    },
+    "admin-menu": {        
+        "title": "Services",
+        "icon": "cogs",
+        "page-title": "Services",
+        "page-icon": "cogs",       
+        "component": "services::admin"
+    }
+}

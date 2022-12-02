@@ -1,0 +1,8 @@
+{{  component('semantic~tabs',{ 
+        items: [ 
+            { id: 'services_button', title: labels.view, component: 'services::admin.view', icon: 'cogs', active: true } 
+        ],
+        menu: { extension: 'services' },
+        content: { component: 'services::admin.view'} 
+    })
+}}

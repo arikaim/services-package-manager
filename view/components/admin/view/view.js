@@ -10,10 +10,7 @@ function ServicesView() {
     var self = this;
 
     this.init = function() {        
-        arikaim.ui.button('.details-button',function(element) {
-            var name = $(element).attr('extension');        
-          
-        });
+        arikaim.ui.loadComponentButton('.details-button');
     };
 }
 

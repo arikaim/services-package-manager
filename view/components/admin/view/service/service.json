@@ -1,29 +1,13 @@
 {
     "labels": {
         "version": "Version",          
-        "enabled": "Enabled",
-        "primary": "Primary", 
-        "system": "System"
+        "name": "Name"
+       
     },
     "buttons": {
-        "install": {
-            "content": "Install"
-        },
-        "uninstall": {
-            "content": "Uninstall"
-        },
-        "update": {
-            "content": "Update"
-        },
-        "primary": {
-            "content": "Set Primary"
-        },
         "details": {
-            "title": "Show extension details",
+            "title": "Show service details",
             "content": "Details"
         }
-    },
-    "messages": {
-        "error": "Missing extension files!"
     }
 }

@@ -2,14 +2,14 @@
     <div class="four wide column">
         <div class="flex">
             <div class="font-bold p-2">
-                {{ labels.extension }}
+                {{ labels.service }}
             </div> 
-            {{ component("system:admin.extensions.dropdown",{ selected: extension, class: 'fluid' }) }}  
+            {{ component("services::admin.view.service.dropdown",{ selected: service_name, class: 'fluid' }) }}  
         </div>           
     </div>        
 </div>    
-<div id="extension_details" class="mt-4">   
-{% if extension is not empty %}  
-    {{ component("system:admin.extensions.extension.details.tabs",{ extension_name: extension }) }}
-{% endif %}
+<div id="service_details" class="mt-4">   
+    {% if service_name is not empty %}  
+        {{ component("services::admin.view.service.details.tabs",{ service_name: service_name }) }}
+    {% endif %}
 </div>

@@ -1,0 +1,13 @@
+{
+    "labels": {
+        "version": "Version",          
+        "name": "Name"
+       
+    },
+    "buttons": {
+        "details": {
+            "title": "Show service details",
+            "content": "Details"
+        }
+    }
+}

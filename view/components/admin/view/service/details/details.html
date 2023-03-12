@@ -1,0 +1,15 @@
+<div class="ui grid segment">
+    <div class="four wide column">
+        <div class="flex">
+            <div class="font-bold p-2">
+                {{ labels.service }}
+            </div> 
+            {{ component("services::admin.view.service.dropdown",{ selected: service_name, class: 'fluid' }) }}  
+        </div>           
+    </div>        
+</div>    
+<div id="service_details" class="mt-4">   
+    {% if service_name is not empty %}  
+        {{ component("services::admin.view.service.details.tabs",{ service_name: service_name }) }}
+    {% endif %}
+</div>

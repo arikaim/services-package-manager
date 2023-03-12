@@ -1,0 +1,9 @@
+{
+    "title": {
+        "content": "Service Server Client Settings",
+        "icon": "cogs"
+    },
+    "labels": {
+        "drivers": "Drivers"        
+    }
+}

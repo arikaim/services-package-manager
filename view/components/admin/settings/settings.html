@@ -1,0 +1,14 @@
+{% component 'semantic~tabs.vertical.content' %}
+    <div class="mt-8">      
+        <div class="ui horizontal divider header">
+            {{ labels.drivers }}
+        </div>
+        <div id="driver_config">
+            {{  component('system:admin.drivers.list',{ 
+                    category: 'service.server.client',                   
+                    buttons: buttons 
+                }) 
+            }}
+        </div>
+    </div>
+{% endcomponent %}

@@ -1,0 +1,18 @@
+{% set items = package('service').getPackages() %}
+<div class="ui segment px-1">
+    <button class="ui basic mini active button">
+        {{ labels.local }}
+    </button>
+</div>
+<div class="ui stackable six cards">
+{% if items|length == 0 %}
+    <div class="ui raised card fluid" id="empty_item"> 
+        <div class="p-4 text-center font-bold">
+            {{ labels.empty }}
+        </div>           
+    </div>
+{% endif %}
+{% for item in items %}
+    {{ component("services::admin.view.service",{ service_name: item }) }}      
+{% endfor %}
+</div>

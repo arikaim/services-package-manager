@@ -1,0 +1,14 @@
+{% set driver = service('driver').create(driver_name) %}
+{% set response = driver.call('ServicesList',[]).toArray() %}
+<div class="ui segment">
+    <h4>
+        {{ labels.services }}
+    </h4>   
+    <div class="ui list">   
+        {% for item in response.result.services %}
+        <div class="ui list">
+            {{ item }}
+        </div>
+        {% endfor %}
+    </div>
+</div>

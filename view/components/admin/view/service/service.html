@@ -1,0 +1,42 @@
+{% set service = package('service').getPackageProperties(service_name) %}
+<div class="ui raised card" id="{{ service.name }}">     
+    <div class="flex flex-row items-center p-2 border-0 border-b border-solid border-gray-300">    
+        <div class="pl-1">
+            <i class="left floated large blue icon {{ service.get('icon')|default('cogs') }}"></i>       
+        </div>                                                 
+        <div class="font-bold mt-1 px-1 flex-grow">
+            {{ service.title }}
+        </div>   
+        <div class="ui horizontal green mini label">               
+            {{ service.get('language') }}            
+        </div>
+    </div>       
+    <div class="flex flex-col self-stretch p-2 flex-grow">
+        <div class="p-1">
+            <div class="ui horizontal basic mini label">               
+                {{ labels.version }} 
+                <div class="detail">{{ service.version }}</div>
+            </div> 
+            <div class="ui horizontal basic mini label">               
+                {{ labels.name }} 
+                <div class="detail">{{ service.name }}</div>
+            </div>  
+        </div>  
+        <div class='self-stretch flex-grow p-1'>
+            <p>{{ service.description }}</p>                     
+        </div>                 
+    </div>        
+    <div class="extra content">
+        <div class="flex flex-row items-center px-1"> 
+            <button 
+                mountTo="tab_content"
+                component="services::admin.view.service.details"
+                params="service_name:{{ service.name }}"
+                class="ui basic icon mini button details-button" 
+                service="{{ service.name }}" 
+                title="{{ buttons.details.title }}">
+                <i class="icon list layout"></i>                                  
+            </button>  
+        </div>
+    </div>
+</div>

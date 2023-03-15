@@ -1,0 +1,10 @@
+{
+    "title": "Service",
+    "labels": {
+        "name": "Name",
+        "title": "Title",
+        "version": "Version",
+        "repo": "Repository",
+        "description": "Description"
+    }
+}

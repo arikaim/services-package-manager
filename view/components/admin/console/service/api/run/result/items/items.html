@@ -1,0 +1,26 @@
+<table class="ui mini very basic definition table">
+    <thead>
+        <tr>
+            <th>
+                {{ labels.key }}
+            </th>
+            <th>
+                {{ labels.value }}
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for key, item in items %}        
+        <tr>
+            <td class="font-bold right aligned">{{ key }}</td>
+            <td>            
+                {% if item is iterable %}
+                    {{ component('finance::admin.api.run.result.items',{ items: item }) }}
+                {% else %}
+                    {{ item }}
+                {% endif %}   
+            </td>    
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>

@@ -1,0 +1,22 @@
+{% set driver = service('driver').create(driver_name) %}
+{% set response = driver.call('ServiceRoutes',{ service: service_name }).toArray() %}
+{% set routes = response.result %}
+
+{{ routes|dump }}
+{% component 'semantic~panel' %}
+    <div class="flex flex-row items-center my-2">
+        <div class="ui blue mini label">
+          
+        </div>
+        <div class="px-2">
+           
+        </div> 
+    </div>
+    {{  component('services::admin.console.service.form',{ 
+            function_class: 'ServiceRoutes',
+            driver_name: driver_name
+        }) 
+    }}
+{% endcomponent %}
+<div id="run_result">
+</div>

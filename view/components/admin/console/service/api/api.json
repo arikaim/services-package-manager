@@ -1,0 +1,11 @@
+{
+    "title": "Api",
+    "labels": {
+        "name": "Name",
+        "title": "Title",
+        "version": "Version",
+        "endpoint": "Endpoint",
+        "repo": "Repository",
+        "description": "Description"
+    }
+}

@@ -4,9 +4,12 @@
     <h4>
         {{ labels.services }}
     </h4>   
-    <div class="ui list">   
+    <div class="ui vertical menu fluid">   
         {% for item in response.result.services %}
-        <div class="ui list">
+        <div 
+            service-name="{{ item }}"
+            driver-name="{{ driver_name }}"
+            class="item link service-details">
             {{ item }}
         </div>
         {% endfor %}

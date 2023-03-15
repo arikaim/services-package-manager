@@ -1,0 +1,11 @@
+{
+    "title": "Run Api Function",
+    "icon": "play circle",
+    "labels": {
+        "name": "Name",
+        "run": "Run",
+        "title": "Title",       
+        "method": "Method",
+        "parameters": "Parameters"                 
+    }
+}

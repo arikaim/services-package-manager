@@ -1,9 +1,11 @@
-{% set driver = service('driver').create(driver_name) %}
-{% set response = driver.call('ServiceRoutes',{ service: service_name }).toArray() %}
-{% set routes = response.result %}
+{%  set driver = service('driver').create(driver_name) %}
+{%  set response = driver.call('ServiceRoute',{ 
+        service: service_name,
+        path: path 
+}).toArray() %}
 
-{{ routes|dump }}
-{% component 'semantic~panel' %}
+{%  set route = response.result.route %}
+{%  component 'semantic~panel' %}
     <div class="flex flex-row items-center my-2">
         <div class="ui blue mini label">
           
@@ -12,11 +14,13 @@
            
         </div> 
     </div>
-    {{  component('services::admin.console.service.form',{ 
-            function_class: 'ServiceRoutes',
-            driver_name: driver_name
+    {{  component('services::admin.console.service.api.run.form',{ 
+            driver_name: driver_name,
+            service_name: service_name,
+            path: path,
+            route: route
         }) 
     }}
-{% endcomponent %}
+{%  endcomponent %}
 <div id="run_result">
 </div>

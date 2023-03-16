@@ -1,12 +1,8 @@
-{% set driver = service('driver').create(driver_name) %}
-{% set api_funcation = driver.createApiFunction(function_class) %}
-{% set descriptor = api_funcation.descriptor() %}
-
 <form class="ui form" id="api_run_form">
+    <input type="hidden" name="method" value="{{ method }}">
     <input type="hidden" name="driver_name" value="{{ driver_name }}">
-    <input type="hidden" name="function_class" value="{{ function_class }}">
-    {% if descriptor.get('parameters') is not empty %}
-        {{ component('semantic~properties.fields',{ properties: descriptor.get('parameters') }) }}
-    {% endif %}
+    <input type="hidden" name="service_name" value="{{ service_name }}">
+    <input type="hidden" name="path" value="{{ path }}">
+    {{ component('semantic~properties.items',{ items: route.params }) }}   
     {{ component('semantic~form.footer',{ button_title: labels.run }) }}    
 </form>

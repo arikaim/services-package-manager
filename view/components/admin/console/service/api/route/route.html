@@ -1,7 +1,7 @@
 <div class="py-2">
     <button 
         class="ui mini icon primary labeled button run-route" 
-        path="{{ route.path }}"
+        path="{{ route.path|trim('/') }}"
         driver-name="{{ driver_name }}"
         service-name="{{ service_name }}">
         <i class="icon play"></i>
@@ -24,7 +24,7 @@
     </div>
     {% endfor %}
     <div class="px-1 inline-block">
-        {{ route.path }}
+        {{ route.full_path }}
     </div>
     {% if route.params is not empty %}
         <div class="py-3">

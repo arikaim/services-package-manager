@@ -24,7 +24,7 @@ class Services extends Extension
     public function install()
     {         
         // Api
-        $this->addApiRoute('POST','/api/admin/services/run','ServicesApi','run','session'); 
+        $this->addApiRoute('POST','/api/admin/services/run','ServicesApi','run','session,token'); 
         // Drivers
         $this->installDriver('Arikaim\\Extensions\\Services\\Drivers\\ServiceServerClient');
     }   

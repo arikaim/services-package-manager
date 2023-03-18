@@ -43,15 +43,35 @@ class ServicesApi extends ApiController
         $driverName = $data->get('driver');   
         $serviceName = $data->get('service');   
        
+       // echo $path;
+       // echo $method;
+       // echo $driverName;
+       // echo $serviceName;
+
+        //exit();
+
         // check access
         $this->requireControlPanelPermission();
        
+        $driver = $this->get('driver')->create($driverName);
+        if ($driver == null) {
+            $this->error('Not valid driver name');
+            return false;
+        }
+
+        $function = $driver->createApiFunction('Run',[
+            'path' => $path
+        ],$data->toArray());
+
+        $apiResult = $function->method($method)->call();
+       
+        if ($apiResult->hasError() == true) {
+            $this->error($apiResult->getError());
+            return false;
+        }
         
-        $this
-            ->message('Service api run') 
-            ->field('method',$method)    
-            ->field('driver',$driverName)   
-            ->field('service',$serviceName)        
-            ->field('path',$path);                      
+        $apiResponse = $apiResult->toArray()['result'] ?? '';
+
+        $this->setResult($apiResponse);                        
     }
 }

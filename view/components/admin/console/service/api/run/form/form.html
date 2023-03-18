@@ -1,8 +1,12 @@
+{{ driver_name }}
+{{ service_name }}
+{{ method }}
+{{ path }}
 <form class="ui form" id="api_run_form">
-    <input type="hidden" name="method" value="{{ method }}">
-    <input type="hidden" name="driver_name" value="{{ driver_name }}">
-    <input type="hidden" name="service_name" value="{{ service_name }}">
-    <input type="hidden" name="path" value="{{ path }}">
+    <input type="hidden" name="method" value="{{ route.methods[0] }}">
+    <input type="hidden" name="driver" value="{{ driver_name }}">
+    <input type="hidden" name="service" value="{{ service_name }}">
+    <input type="hidden" name="path" value="{{ route.full_path }}">
     {{ component('semantic~properties.items',{ items: route.params }) }}   
     {{ component('semantic~form.footer',{ button_title: labels.run }) }}    
 </form>

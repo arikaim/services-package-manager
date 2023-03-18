@@ -34,12 +34,28 @@ class ServiceServerClient extends AbstractApiClient implements DriverInterface
     }
 
     /**
+     * Get error field name
+     *
+     * @return string|null
+    */
+    public function getErrorFieldName(): ?string
+    {
+        return 'errors';
+    }
+
+    /**
      * Get authorization header or false if api not uses header for auth
      *
      * @return array|null
     */
     public function getAuthHeaders(?array $params = null): ?array
     {
+        if (empty($this->getApiKey()) == false) {           
+            return [
+                'Authorization: ' . $this->getApiKey()
+            ];
+        }
+
         return null;
     }
 
@@ -53,6 +69,7 @@ class ServiceServerClient extends AbstractApiClient implements DriverInterface
     {             
         $baseUrl = "http://" . $properties->getValue('host') . ':' . $properties->getValue('port') . '/';
         $this->setBaseUrl($baseUrl);  
+        $this->setApiKey($properties->getValue('api_key'));
 
         $this->setFunctionsNamespace('Arikaim\\Extensions\\Services\\Drivers\\Functions\\');   
     }
@@ -78,6 +95,13 @@ class ServiceServerClient extends AbstractApiClient implements DriverInterface
                 ->title('Port')
                 ->type('number')
                 ->default('5000')                              
+                ->readonly(false);              
+        });  
+
+        $properties->property('api_key',function($property) {
+            $property
+                ->title('Api Key')
+                ->type('text')                                         
                 ->readonly(false);              
         });  
     }

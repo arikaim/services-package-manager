@@ -8,10 +8,9 @@
 {%  component 'semantic~panel' %}
     <div class="flex flex-row items-center my-2">
         <div class="ui blue mini label">
-          
+            {{ service_name }}          
         </div>
-        <div class="px-2">
-           {{ route|dump }}
+        <div class="px-2">          
         </div> 
     </div>
     {{  component('services::admin.console.service.api.run.form',{ 

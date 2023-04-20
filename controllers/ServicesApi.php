@@ -38,18 +38,12 @@ class ServicesApi extends ApiController
         $data                     
             ->validate(true);
 
-        $path = $data->get('path');   
+        $fullPath = $data->get('full_path');   
+        $path = ltrim($data->get('path'),'/');   
         $method = $data->get('method');       
         $driverName = $data->get('driver');   
         $serviceName = $data->get('service');   
        
-       // echo $path;
-       // echo $method;
-       // echo $driverName;
-       // echo $serviceName;
-
-        //exit();
-
         // check access
         $this->requireControlPanelPermission();
        
@@ -59,8 +53,14 @@ class ServicesApi extends ApiController
             return false;
         }
 
+        $routeDetails = $this->getRouteDetails($driver,$serviceName,$path);
+        if ($routeDetails === false) {
+            $this->error('Route details error');
+            return false;
+        }
+
         $function = $driver->createApiFunction('Run',[
-            'path' => $path
+            'path' => $fullPath
         ],$data->toArray());
 
         $apiResult = $function->method($method)->call();
@@ -72,6 +72,30 @@ class ServicesApi extends ApiController
         
         $apiResponse = $apiResult->toArray()['result'] ?? '';
 
-        $this->setResult($apiResponse);                        
+        foreach ($apiResponse as $key => $value) {
+            $this->field($key,$value);
+            if (isset($routeDetails['route']['result'][$key]) == true) {
+                $routeDetails['route']['result'][$key]['value'] = $value;
+            }
+        }                 
+        
+        $this->field('route',$routeDetails['route'] ?? []);
+    }
+
+    /**
+     * Get route details
+     *
+     * @param string $serviceName
+     * @param string $path
+     * @return array|false
+     */
+    protected function getRouteDetails($driver, string $serviceName, string $path)
+    {
+        $apiResult = $driver->createApiFunction('ServiceRoute',[
+            'path'    => $path,
+            'service' => $serviceName
+        ])->call();
+  
+        return ($apiResult->hasError() == true) ? false : $apiResult->toArray()['result'] ?? false;           
     }
 }

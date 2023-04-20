@@ -6,7 +6,8 @@
     <input type="hidden" name="method" value="{{ route.methods[0] }}">
     <input type="hidden" name="driver" value="{{ driver_name }}">
     <input type="hidden" name="service" value="{{ service_name }}">
-    <input type="hidden" name="path" value="{{ route.full_path }}">
+    <input type="hidden" name="full_path" value="{{ route.full_path }}">
+    <input type="hidden" name="path" value="{{ route.path }}">
     {{ component('semantic~properties.items',{ items: route.params }) }}   
     {{ component('semantic~form.footer',{ button_title: labels.run }) }}    
 </form>

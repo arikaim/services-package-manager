@@ -1,14 +1,19 @@
-{% component 'semantic~tabs.vertical.content' %}
-    <div class="mt-8">      
-        <div class="ui horizontal divider header">
-            {{ labels.drivers }}
-        </div>
-        <div id="driver_config">
-            {{  component('system:admin.drivers.list',{ 
-                    category: 'service.server.client',                   
-                    buttons: buttons 
-                }) 
-            }}
-        </div>
+<div class="ui two column grid">
+    <div class="column">
+        {% component 'semantic~panel' %}
+            {% set close_button = false %}
+            <div class="mt-8">      
+                <div class="ui horizontal divider header">
+                    {{ labels.drivers }}
+                </div>
+                <div id="driver_config">
+                    {{  component('system:admin.drivers.list',{ 
+                            category: 'service.server.client',                   
+                            buttons: buttons 
+                        }) 
+                    }}
+                </div>
+            </div>
+        {% endcomponent %}
     </div>
-{% endcomponent %}
+</div>

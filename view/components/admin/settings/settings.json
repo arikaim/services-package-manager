@@ -1,8 +1,6 @@
 {
-    "title": {
-        "content": "Service providers",
-        "icon": "cogs"
-    },
+    "title":"Service providers",   
+    "icon": "cogs",
     "labels": {
         "drivers": "Drivers"        
     }

@@ -10,7 +10,7 @@ arikaim.component.onLoaded(function() {
                     driver_name: value 
                 }
             },function(result) {
-               
+                $('#service_details').html('');
             });
         }
     });

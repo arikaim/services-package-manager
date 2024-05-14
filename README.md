@@ -8,10 +8,11 @@ Arikaim CMS services package manager extension
 
 #### Requirements 
   * [Arikaim CMS](https://github.com/arikaim/arikaim)
-  * [Api client module]
 
 #### Installation
 
 ```sh
+
 composer require arikaim/services-package-manager
+
 ```

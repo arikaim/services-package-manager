@@ -1,7 +1,7 @@
 {  
     "labels": {       
-        "view": "Services",
-        "console": "Console",
+        "local": "Local",
+        "remote": "Remote",
         "settings": "Settings"           
     }  
 }

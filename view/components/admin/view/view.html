@@ -1,9 +1,4 @@
 {% set items = package('service').getPackages() %}
-<div class="ui segment px-1">
-    <button class="ui basic mini active button">
-        {{ labels.local }}
-    </button>
-</div>
 <div class="ui stackable six cards">
 {% if items|length == 0 %}
     <div class="ui raised card fluid" id="empty_item"> 

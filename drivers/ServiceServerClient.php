@@ -67,7 +67,13 @@ class ServiceServerClient extends AbstractApiClient implements DriverInterface
      */
     public function initDriver($properties)
     {             
-        $baseUrl = "http://" . $properties->getValue('host') . ':' . $properties->getValue('port') . '/';
+        $baseUrl = $properties->getValue('host');
+        if ((string)$properties->getValue('port') != '80') {
+            $baseUrl .= ':' . $properties->getValue('port') . '/';
+        } else {
+            $baseUrl .= '/';
+        }
+      
         $this->setBaseUrl($baseUrl);  
         $this->setApiKey($properties->getValue('api_key'));
 
@@ -86,7 +92,7 @@ class ServiceServerClient extends AbstractApiClient implements DriverInterface
             $property
                 ->title('Host')
                 ->type('text')
-                ->default('localhost')                              
+                ->default('http://localhost')                              
                 ->readonly(false);              
         });  
         

@@ -32,17 +32,17 @@
                 <td>
                     {{ details.version }}
                 </td>
-            </tr>
+            </tr>  
             <tr>
-                <td class="right aligned">{{ labels.repo }}</td>
+                <td class="right aligned">{{ labels.endpoint }}</td>
                 <td>
-                    {{ details.repository }}
+                    {{ driver.getBaseUrl() }}
                 </td>
-            </tr>                   
+            </tr>                           
         </tbody>  
     </table> 
 </div>
-{{  component('services::admin.console.service.api',{
+{{  component('services::admin.remote.service.api',{
         driver_name: driver_name,
         service_name: service_name
     }) 

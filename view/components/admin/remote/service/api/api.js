@@ -9,7 +9,7 @@ arikaim.component.onLoaded(function() {
 
         arikaim.page.loadContent({
             id: 'run_content',
-            component: 'services::admin.console.service.api.run',
+            component: 'services::admin.remote.service.api.run',
             params: { 
                 service_name: service,
                 driver_name: driver,

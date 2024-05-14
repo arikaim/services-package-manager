@@ -22,11 +22,10 @@ class Services extends Extension
      * @return void
     */
     public function install()
-    {         
-        // Api
-        $this->addApiRoute('POST','/api/admin/services/run','ServicesApi','run','session,token'); 
+    {                 
         // Drivers
         $this->installDriver('Arikaim\\Extensions\\Services\\Drivers\\ServiceServerClient');
+        $this->installDriver('Arikaim\\Extensions\\Services\\Drivers\\WebToolsServicesClient');
     }   
 
     /**

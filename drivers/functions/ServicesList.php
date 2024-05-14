@@ -26,7 +26,7 @@ class ServicesList extends AbstractApiFunction implements ApiFunctionInterface
     {
         $this
             ->method('GET')
-            ->path('/admin/services')
+            ->path('/help/services')
             ->paramsType('query');    
     }
 }

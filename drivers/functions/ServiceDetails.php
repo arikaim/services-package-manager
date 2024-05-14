@@ -26,7 +26,7 @@ class ServiceDetails extends AbstractApiFunction implements ApiFunctionInterface
     {
         $this
             ->method('GET')
-            ->path('/admin/service/{{service}}')           
+            ->path('/help/service/details/{{service}}')           
             ->paramsType('path');    
     }
 }

@@ -1,0 +1,41 @@
+<div class="ui segment">
+    <div class="py-1">
+        {{ route.title }}
+    </div>
+    <div class="py-1">
+        {{ route.description }}
+    </div>
+    <div class="font-bold">
+        {{ labels.path }}
+    </div>
+    <div clsss="flex flex-row items-center">
+        {% for method in route.methods %}
+        <div class="ui mini primary label">
+            {{ method }}
+        </div>
+        {% endfor %}
+        <div class="px-1 inline-block">
+            {{ route.path }}
+        </div>
+        {% if route.params is not empty %}
+            <div class="py-3">
+                <h4>
+                    {{ labels.properties }}
+                </h4>
+                <div class="p-1">
+                    {{ component('semantic~properties.details',{ class: 'mini', properties: route.params }) }}
+                </div>        
+            </div>
+        {% endif %}
+        {% if route.result is not empty %}
+            <div class="py-2">
+                <h4>
+                    {{ labels.response }}
+                </h4>
+                <div>
+                    {{ component('semantic~properties.details',{ class: 'mini', properties: route.result }) }}
+                </div>       
+            </div>
+        {% endif %}
+    </div>
+</div>

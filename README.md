@@ -8,7 +8,7 @@ Arikaim CMS services package manager extension
 
 #### Requirements 
   * [Arikaim CMS](https://github.com/arikaim/arikaim)
-  
+  * [Api client module]
 
 #### Installation
 

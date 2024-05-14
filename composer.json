@@ -10,7 +10,8 @@
         "homepage": "http://arikaim.com"
     }],
     "require": {       
-        "arikaim/installer": "*"
+        "arikaim/installer": "*",
+        "arikaim/api-client-module": "*"
     },
     "extra": {
         "path": "services"

@@ -1,7 +1,7 @@
 {{  component('semantic~tabs',{ 
         items: [ 
-            { title: labels.view, component: 'services::admin.view', icon: 'list', active: true },
-            { title: labels.console, component: 'services::admin.console', icon: 'server' },
+            { title: labels.local, component: 'services::admin.view', icon: 'list', active: true },
+            { title: labels.remote, component: 'services::admin.remote', icon: 'server' },
             { title: labels.settings, component: 'services::admin.settings', icon: 'cogs' } 
         ],
         menu: { extension: 'services' },

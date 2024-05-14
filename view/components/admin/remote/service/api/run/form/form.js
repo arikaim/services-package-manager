@@ -7,7 +7,7 @@ arikaim.component.onLoaded(function() {
         return arikaim.post('/api/admin/services/run','#api_run_form',function(result) { 
             return arikaim.page.loadContent({
                 id: 'run_result',           
-                component: 'services::admin.console.service.api.run.result',
+                component: 'services::admin.remote.service.api.run.result',
                 params: {}         
             },function() {
                 console.log(result);

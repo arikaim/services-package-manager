@@ -5,7 +5,7 @@ arikaim.component.onLoaded(function() {
         onChange: function(value) {                    
             arikaim.page.loadContent({
                 id: 'services_list',
-                component: 'services::admin.console.services',
+                component: 'services::admin.remote.services',
                 params: { 
                     driver_name: value 
                 }

@@ -25,7 +25,6 @@ class Services extends Extension
     {                 
         // Drivers
         $this->installDriver('Arikaim\\Extensions\\Services\\Drivers\\ServiceServerClient');
-        $this->installDriver('Arikaim\\Extensions\\Services\\Drivers\\WebToolsServicesClient');
     }   
 
     /**

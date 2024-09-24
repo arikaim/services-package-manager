@@ -26,7 +26,7 @@ class ServiceRoute extends AbstractApiFunction implements ApiFunctionInterface
     {
         $this
             ->method('GET')
-            ->path('/help/service/route/{{service}}/{{path}}')
+            ->path('/help/service/route/{{service}}/{{name}}')
             ->paramsType('path');    
     }
 }

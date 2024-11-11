@@ -5,7 +5,7 @@
     "type": "system",
     "description": "Services manager for local and remote api services.",
     "short-description": "Api services manager.",
-    "version": "1.1.2",
+    "version": "1.1.3",
     "repository": "https://github.com/arikaim/services-package-manager.git",
     "position": "2",
     "requires": {      

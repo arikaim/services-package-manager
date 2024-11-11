@@ -1,5 +1,5 @@
 {  
     "labels": {       
-        "empty": "No installed services"
+        "empty": "No found local services"
     }  
 }

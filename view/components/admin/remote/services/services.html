@@ -8,10 +8,10 @@
     <div class="ui vertical menu fluid">   
         {% for item in response.result.services %}
         <div 
-            service-name="{{ item }}"
+            service-name="{{ item.name }}"
             driver-name="{{ driver_name }}"
             class="item link service-details">
-            {{ item }}
+            {{ item.title }}
         </div>
         {% endfor %}
     </div>

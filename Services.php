@@ -24,7 +24,7 @@ class Services extends Extension
     public function install()
     {                 
         // Drivers
-        $this->installDriver('Arikaim\\Extensions\\Services\\Drivers\\ServiceServerClient');
+        $this->installDriver('ServiceServerClient');
     }   
 
     /**

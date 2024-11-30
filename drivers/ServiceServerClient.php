@@ -99,8 +99,7 @@ class ServiceServerClient extends AbstractApiClient implements DriverInterface
         $properties->property('port',function($property) {
             $property
                 ->title('Port')
-                ->type('number')
-                ->default('5000')                              
+                ->type('number')                         
                 ->readonly(false);              
         });  
 
